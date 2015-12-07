@@ -1,8 +1,8 @@
 {
   "name": "redux-form-validate",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Validate function for redux-form. Type checking based on React.PropTypes.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "6.3.15",
@@ -17,6 +17,7 @@
   },
   "scripts": {
     "lint": "eslint src/types",
+    "prepublish": "node_modules/.bin/babel src --out-dir dist",
     "test": "node_modules/.bin/babel-node node_modules/isparta/bin/isparta cover --report text --report html node_modules/mocha/bin/_mocha -- --reporter spec"
   },
   "repository": {

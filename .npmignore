@@ -2,9 +2,6 @@
 ### Linux template
 *~
 
-# dist is for local use
-dist
-
 # KDE directory preferences
 .directory
 
