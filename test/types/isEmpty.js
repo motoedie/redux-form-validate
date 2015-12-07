@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import isEmpty from '../../src/types/isEmpty';
 
 /* eslint-disable func-names, no-unused-expressions */
-describe('isEmtpy', function() {
+describe('isEmpty', function() {
   it('should recognize empty string', function() {
     expect(isEmpty('test', '', 'string')).to.not.be.null;
   });

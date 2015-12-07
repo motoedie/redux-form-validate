@@ -1,20 +1,26 @@
+/**
+ * Checks all values from redux-form agains definition in schema object.
+ * Returns null if there are no erros and returns object for redux-form in case of errors.
+ * If schema isn't valid object, return empty object, always.
+ * @param scehma {{}} Object with types for every attribute
+ */
 const validate = (schema) => {
-  return function(values) {
-    let errors = {};      // eslint-disable-line prefer-const
+  /**
+   * @param values {{}} Provides redux-form
+   */
+  return function(values) {                               // eslint-disable-line func-names
+    let errors = {};                                      // eslint-disable-line prefer-const
 
-    // schema protection
     if (typeof schema !== 'object') return errors;
 
-    // check all props
     for (let key in schema) {                             // eslint-disable-line prefer-const
-      // if prop in received data
       if (typeof values[key] === 'undefined') {
         errors = Object.assign(errors, { [key]: 'Required' });
       } else {
-        const res = schema[key](key, values[key]);
+        const result = schema[key](key, values[key]);
 
-        if (res) {
-          errors = Object.assign(errors, res);
+        if (result) {
+          errors = Object.assign(errors, result);
         }
       }
     }
