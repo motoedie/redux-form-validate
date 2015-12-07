@@ -32,5 +32,4 @@ describe('getPropTypes', function() {
     expect(getPropTypes(true)).to.equal('boolean');
   });
 });
-
 /* eslint-enable func-names */

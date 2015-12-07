@@ -39,6 +39,9 @@ describe('isEmtpy', function() {
   it('should recognize number', function() {
     expect(isEmpty('test', 5, 'number')).to.be.null;
   });
-});
 
+  it('should recognize boolean', function() {
+    expect(isEmpty('test', false, 'boolean')).to.be.null;
+  });
+});
 /* eslint-enable func-names, no-unused-expressions */

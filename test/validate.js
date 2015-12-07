@@ -4,7 +4,7 @@ import validate from '../src/validate';
 import ValidTypes from '../src/types/index';
 
 /* eslint-disable func-names, no-unused-expressions */
-describe('createPrimitiveTypeChecker', function() {
+describe('validate', function() {
   it('should recognize non-object schema', function() {
     expect(validate('non-object')()).to.be.empty;
   });
@@ -15,7 +15,7 @@ describe('createPrimitiveTypeChecker', function() {
     };
 
     const values = {
-      username: 'some string'
+      test: 'some string'
     };
 
     expect(validate(schema)(values)).to.be.eql({});
@@ -27,10 +27,46 @@ describe('createPrimitiveTypeChecker', function() {
     };
 
     const values = {
+      test: ''
+    };
+
+    expect(validate(schema)(values)).to.be.eql({ test: 'Required' });
+  });
+
+  it('should recognize missing prop', function() {
+    const schema = {
+      test: ValidTypes.string
+    };
+
+    const values = {
       username: ''
     };
 
     expect(validate(schema)(values)).to.be.eql({ test: 'Required' });
+  });
+
+  it('should recognize empty array', function() {
+    const schema = {
+      test: ValidTypes.array
+    };
+
+    const values = {
+      test: []
+    };
+
+    expect(validate(schema)(values)).to.be.eql({ test: 'Required' });
+  });
+
+  it('should pass array', function() {
+    const schema = {
+      test: ValidTypes.array
+    };
+
+    const values = {
+      test: [5]
+    };
+
+    expect(validate(schema)(values)).to.be.eql({});
   });
 });
 
