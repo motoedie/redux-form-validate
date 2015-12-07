@@ -1,12 +1,10 @@
 {
   "name": "redux-form-validate",
   "version": "0.0.1",
-  "description": "",
+  "description": "Validate function for redux-form. Type checking based on React.PropTypes.",
   "main": "src/index.js",
   "dependencies": {
-    "babel-eslint": "5.0.0-beta4",
-    "eslint": "1.10.3",
-    "eslint-config-airbnb": "2.0.0"
+
   },
   "devDependencies": {
     "babel-core": "6.3.15",
@@ -19,6 +17,7 @@
     "mocha": "2.3.4"
   },
   "scripts": {
+    "lint": "eslint src/types",
     "test": "node node_modules/isparta/bin/isparta cover --report text --report html node_modules/mocha/bin/_mocha -- --reporter spec"
   },
   "repository": {
@@ -29,6 +28,7 @@
     "react",
     "redux",
     "redux-form",
+    "redux-form-validate",
     "validate",
     "validation"
   ],

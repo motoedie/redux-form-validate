@@ -1,8 +1,14 @@
 const validate = (schema) => {
   return function(values) {
-    let errors = {};    // eslint-disable-line prefer-const
+    let errors = {};      // eslint-disable-line prefer-const
 
-    errors.asdf = 1;
+    // protection
+    if (typeof schema !== 'object') return errors;
+
+    // check all props
+    for (let key in schema) {
+      //const res =
+    }
 
     return errors;
   };
