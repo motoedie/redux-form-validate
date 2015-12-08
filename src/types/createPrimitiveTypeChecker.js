@@ -7,7 +7,7 @@ import getPropType from './getPropType';
  * Returns function which is called by ../validate.js when redux-form checks validation.
  * @param expectedType {string} Expected type, eg. 'string', 'array'
  */
-const createPrimitiveTypeChecker = (expectedType) => {
+const createPrimitiveTypeChecker = (expectedType, isRequired = false) => {
   /**
    * Function called when validation is necessary.
    * Returns null if valid. Returns object if error occured.
