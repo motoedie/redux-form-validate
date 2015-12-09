@@ -21,7 +21,19 @@ describe('validate', function() {
     expect(validate(schema)(values)).to.be.eql({});
   });
 
-  it('should recognize empty string', function() {
+  it('should recognize empty string if required', function() {
+    const schema = {
+      test: ValidTypes.string.isRequired
+    };
+
+    const values = {
+      test: ''
+    };
+
+    expect(validate(schema)(values)).to.be.eql({ test: 'Required' });
+  });
+
+  it('should recognize empty string if not required', function() {
     const schema = {
       test: ValidTypes.string
     };
@@ -30,7 +42,7 @@ describe('validate', function() {
       test: ''
     };
 
-    expect(validate(schema)(values)).to.be.eql({ test: 'Required' });
+    expect(validate(schema)(values)).to.be.eql({});
   });
 
   it('should recognize missing prop', function() {
@@ -45,9 +57,21 @@ describe('validate', function() {
     expect(validate(schema)(values)).to.be.eql({ test: 'Required' });
   });
 
-  it('should recognize empty array', function() {
+  it('should recognize empty array if not required', function() {
     const schema = {
       test: ValidTypes.array
+    };
+
+    const values = {
+      test: []
+    };
+
+    expect(validate(schema)(values)).to.be.eql({});
+  });
+
+  it('should recognize empty array if required', function() {
+    const schema = {
+      test: ValidTypes.array.isRequired
     };
 
     const values = {
@@ -67,6 +91,34 @@ describe('validate', function() {
     };
 
     expect(validate(schema)(values)).to.be.eql({});
+  });
+
+  it('should validate multiple values', function() {
+    const schema = {
+      test: ValidTypes.array,
+      test2: ValidTypes.number.isRequired
+    };
+
+    const values = {
+      test: [5],
+      test2: 255
+    };
+
+    expect(validate(schema)(values)).to.be.eql({});
+  });
+
+  it('should validate multiple values when some fail', function() {
+    const schema = {
+      test: ValidTypes.array,
+      test2: ValidTypes.number.isRequired
+    };
+
+    const values = {
+      test: [5],
+      test2: true
+    };
+
+    expect(validate(schema)(values)).to.be.eql({ test2: 'Required' });
   });
 });
 

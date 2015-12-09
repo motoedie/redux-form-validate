@@ -1,5 +1,5 @@
 # redux-form-validate
-Small libraty inspired by React's PropTypes.
+Small library inspired by React's PropTypes.
 
 ## Validation Types
 Define validation schema. Every attribute must correspond to attribute in 'values' object provided by redux-form.
@@ -16,7 +16,12 @@ const schema = {
   someBoolean: ValidTypes.bool,
   someNumber: ValidTypes.number,
   someObject: ValidTypes.object,
-  someString: ValidTypes.string
+  someString: ValidTypes.string,
+  someRequiredArray: ValidTypes.array.isRequired,
+  someRequiredBoolean: ValidTypes.bool.isRequired,
+  someRequiredNumber: ValidTypes.number.isRequired,
+  someRequiredObject: ValidTypes.object.isRequired,
+  someRequiredString: ValidTypes.string.isRequired
 }
 ```
 

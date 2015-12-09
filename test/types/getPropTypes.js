@@ -12,6 +12,10 @@ describe('getPropTypes', function() {
     expect(getPropTypes(55)).to.equal('number');
   });
 
+  it('should return number if number in string', function() {
+    expect(getPropTypes('55')).to.equal('number');
+  });
+
   it('should return array', function() {
     expect(getPropTypes([])).to.equal('array');
   });

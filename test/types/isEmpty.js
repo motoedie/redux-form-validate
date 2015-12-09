@@ -12,16 +12,28 @@ describe('isEmpty', function() {
     expect(isEmpty('test', 'test', 'string')).to.be.null;
   });
 
-  it('should recognize empty array', function() {
-    expect(isEmpty('test', [], 'array')).to.not.be.null;
+  it('should recognize empty array not required', function() {
+    expect(isEmpty('test', [], 'array')).to.be.null;
   });
 
-  it('should recognize non-empty array', function() {
+  it('should recognize empty array if required', function() {
+    expect(isEmpty('test', [], 'array', true)).to.not.be.null;
+  });
+
+  it('should recognize non-empty array with value if not required', function() {
     expect(isEmpty('test', [5], 'array')).to.be.null;
   });
 
-  it('should recognize empty object', function() {
-    expect(isEmpty('test', {}, 'object')).to.not.be.null;
+  it('should recognize non-empty array with value if required', function() {
+    expect(isEmpty('test', [5], 'array', true)).to.be.null;
+  });
+
+  it('should recognize empty object not required', function() {
+    expect(isEmpty('test', {}, 'object')).to.be.null;
+  });
+
+  it('should recognize empty object if required', function() {
+    expect(isEmpty('test', {}, 'object', true)).to.not.be.null;
   });
 
   it('should recognize non-empty object', function() {

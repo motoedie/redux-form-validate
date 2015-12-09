@@ -10,6 +10,10 @@ const getPropType = (propValue) => {
     return 'array';
   }
 
+  if (typeof propValue === 'string' && !isNaN(propValue)) {
+    return 'number';
+  }
+
   return propType;
 };
 

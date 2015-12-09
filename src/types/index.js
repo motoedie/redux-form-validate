@@ -8,10 +8,10 @@ let ValidTypes = {                                // eslint-disable-line prefer-
   string: createPrimitiveTypeChecker('string')
 };
 
-ValidTypes.string.isRequired = createPrimitiveTypeChecker('array', true);
-ValidTypes.string.isRequired = createPrimitiveTypeChecker('boolean', true);
-ValidTypes.string.isRequired = createPrimitiveTypeChecker('number', true);
-ValidTypes.string.isRequired = createPrimitiveTypeChecker('object', true);
+ValidTypes.array.isRequired = createPrimitiveTypeChecker('array', true);
+ValidTypes.bool.isRequired = createPrimitiveTypeChecker('boolean', true);
+ValidTypes.number.isRequired = createPrimitiveTypeChecker('number', true);
+ValidTypes.object.isRequired = createPrimitiveTypeChecker('object', true);
 ValidTypes.string.isRequired = createPrimitiveTypeChecker('string', true);
 
 export default ValidTypes;
