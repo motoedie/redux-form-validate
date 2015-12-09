@@ -4,3 +4,6 @@ machine:
 test:
   override:
     - npm run test:cover
+general:
+  artifacts:
+    - "coverage" # relative to code coverage
