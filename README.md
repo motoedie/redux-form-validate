@@ -4,7 +4,7 @@ Small library inspired by React's PropTypes.
 ## Validation Types
 Define validation schema. Every attribute must correspond to attribute in 'values' object provided by redux-form.
 
-Every attribute defined in schema is considered as required. If attribute isn't defined, it won't be checked.
+In case attribute isn't required, it's value can be undefined or empty string.
 
 ## Usage
 ### Define Schema
@@ -34,7 +34,7 @@ export default validate(schema);
 
 ### Provide Your 'validate' Function
 ```javascript
-import {reduxForm} from 'redux-form';
+import { reduxForm } from 'redux-form';
 import validate from './validate';
 
 ...
@@ -47,5 +47,4 @@ export default reduxForm({
 ```
 
 ## Future
-- Separate isRequired
 - add arrayOf, shape and other validation types
