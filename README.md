@@ -1,4 +1,7 @@
 # redux-form-validate
+[![Circle CI](https://circleci.com/gh/motoedie/redux-form-validate/tree/master.svg?style=svg)](https://circleci.com/gh/motoedie/redux-form-validate/tree/master)
+[![npm version](https://img.shields.io/npm/v/redux-form-validate.svg?style=flat-square)](https://www.npmjs.com/package/redux-form-validate)
+
 Small library inspired by React's PropTypes.
 
 ## Validation Types
