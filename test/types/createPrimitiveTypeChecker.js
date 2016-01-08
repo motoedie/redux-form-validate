@@ -41,6 +41,11 @@ describe('createPrimitiveTypeChecker', function() {
     expect(createPrimitiveTypeChecker('string')('test', someVar)).to.be.null;
   });
 
+  it('should recognize string if number in string', function() {
+    const someVar = '555';
+    expect(createPrimitiveTypeChecker('string')('test', someVar)).to.be.null;
+  });
+
   it('should recognize undefined if not required', function() {
     expect(createPrimitiveTypeChecker('string')('test', undefined)).to.be.null;
   });

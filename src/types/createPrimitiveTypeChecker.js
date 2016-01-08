@@ -13,7 +13,8 @@ const createPrimitiveTypeChecker = (expectedType, isRequired = false) => {
    * Function called when validation is necessary.
    * Returns null if valid. Returns object if error occured.
    * First checks if value is provided and is required.
-   * Then checks type and checks if value is not empty.
+   * Then checks type.
+   * Finally checks if value is not empty.
    * @param propName {string} Property name
    * @param propValue - Value
    */
@@ -22,7 +23,7 @@ const createPrimitiveTypeChecker = (expectedType, isRequired = false) => {
       return null;
     }
 
-    const propType = getPropType(propValue);
+    const propType = getPropType(propValue, expectedType);
     if (propType !== expectedType) {
       return { [propName]: 'Required' };
     }
