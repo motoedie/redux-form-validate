@@ -8,7 +8,7 @@ import getPropType from './getPropType';
  * @param expectedType {string} Expected type, eg. 'string', 'array'
  * @param isRequired {boolean} Property required?
  */
-const createPrimitiveTypeChecker = (expectedType, isRequired = false) => {
+const createPrimitiveTypeChecker = (expectedType, isRequired = false) =>
   /**
    * Function called when validation is necessary.
    * Returns null if valid. Returns object if error occured.
@@ -18,8 +18,9 @@ const createPrimitiveTypeChecker = (expectedType, isRequired = false) => {
    * @param propName {string} Property name
    * @param propValue - Value
    */
-  function validate(propName, propValue) {
-    if (!isRequired && (typeof propValue === 'undefined' || propValue === '')) {
+  (propName, propValue) => {
+    if (!isRequired &&
+      (typeof propValue === 'undefined' || propValue === null || propValue === '')) {
       return null;
     }
 
@@ -29,8 +30,6 @@ const createPrimitiveTypeChecker = (expectedType, isRequired = false) => {
     }
 
     return isEmpty(propName, propValue, propType, isRequired);
-  }
-  return validate;
-};
+  };
 
 export default createPrimitiveTypeChecker;
