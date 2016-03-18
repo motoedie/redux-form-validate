@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 4.2.0
+    version: 5.8.0
 test:
   override:
     - npm run test:cover
