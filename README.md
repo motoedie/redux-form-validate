@@ -20,12 +20,16 @@ const schema = {
   someNumber: ValidTypes.number,
   someObject: ValidTypes.object,
   someString: ValidTypes.string,
+  someInteger: ValidTypes.integer,
+  someFloat: ValidTypes.float,
   someRequiredArray: ValidTypes.array.isRequired,
   someRequiredBoolean: ValidTypes.bool.isRequired,
   someRequiredNumber: ValidTypes.number.isRequired,
   someRequiredObject: ValidTypes.object.isRequired,
-  someRequiredString: ValidTypes.string.isRequired
-}
+  someRequiredString: ValidTypes.string.isRequired,
+  someRequiredInteger: ValidTypes.integer.isRequired,
+  someRequiredFloat: ValidTypes.float.isRequired,
+};
 ```
 
 ### Export Schema
