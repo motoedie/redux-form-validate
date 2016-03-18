@@ -5,7 +5,7 @@ let ValidTypes = {                                // eslint-disable-line prefer-
   bool: createPrimitiveTypeChecker('boolean'),
   number: createPrimitiveTypeChecker('number'),
   object: createPrimitiveTypeChecker('object'),
-  string: createPrimitiveTypeChecker('string')
+  string: createPrimitiveTypeChecker('string'),
 };
 
 ValidTypes.array.isRequired = createPrimitiveTypeChecker('array', true);

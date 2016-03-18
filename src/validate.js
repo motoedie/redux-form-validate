@@ -9,8 +9,7 @@ const validate = (schema) =>
    * @param values {{}} Provides redux-form
    */
   values => {
-    if (typeof schema !== 'object')
-      return {};
+    if (typeof schema !== 'object') return {};
     return Object.keys(schema).reduce(
       (errors, key) => {
         const result = schema[key](key, values[key]);
