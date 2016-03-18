@@ -1,6 +1,6 @@
 {
   "name": "redux-form-validate",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Validate function for redux-form. Type checking based on React.PropTypes.",
   "main": "dist/index.js",
   "dependencies": {

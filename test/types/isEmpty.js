@@ -55,5 +55,9 @@ describe('isEmpty', () => {
   it('should recognize boolean', () => {
     expect(isEmpty('test', false, 'boolean')).to.be.null;
   });
+
+  it('should recognize null if required', () => {
+    expect(isEmpty('test', null, 'object', true)).to.not.be.null;
+  });
 });
 /* eslint-enable func-names, no-unused-expressions */

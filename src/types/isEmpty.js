@@ -3,6 +3,7 @@
  * For example if property is array, checks if there are any values in it.
  * Returns null if passed. Returns object for redux-form in case of not being empty.
  * If array and object aren't required, returns null
+ * Because of fuck up in JS 'object' is checked if it's null instead of object
  * @param propName {string} Property name.
  * @param propValue - Value of property.
  * @param propType {string} Property type.
@@ -17,6 +18,7 @@ const isEmpty = (propName, propValue, propType, isRequired = false) => {
       return null;
     case 'object':
       if (isRequired) {
+        if (propValue === null) return { [propName]: 'Required' };
         return Object.keys(propValue).length === 0 ? { [propName]: 'Required' } : null;
       }
       return null;
