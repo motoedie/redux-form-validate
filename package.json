@@ -40,5 +40,8 @@
   "bugs": {
     "url": "https://github.com/motoedie/redux-form-validate/issues"
   },
-  "homepage": "https://github.com/motoedie/redux-form-validate#readme"
+  "homepage": "https://github.com/motoedie/redux-form-validate#readme",
+  "publishConfig": {
+    "registry":"https://registry.npmjs.org/"
+  }
 }
