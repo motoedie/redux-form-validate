@@ -1,6 +1,6 @@
 import createPrimitiveTypeChecker from './createPrimitiveTypeChecker';
 
-let ValidTypes = {                                // eslint-disable-line prefer-const
+let ValidTypes = {                 // eslint-disable-line prefer-const, import/no-mutable-exports
   array: createPrimitiveTypeChecker('array'),
   bool: createPrimitiveTypeChecker('boolean'),
   float: createPrimitiveTypeChecker('float'),
